@@ -85,7 +85,7 @@ The overlay image is downloaded from openstreetmaps.org in PNG format and is cal
 overlay_file <- "C:/Users/asus/Downloads/map (1).png"
 overlay_img <- png::readPNG(overlay_file)
 ```
-![Final 2D plot](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/OSmap.png)
+![Final 2D plot](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/map(1).png)
 
 A overlay image is then transposed upon the previously configured elevation plot with an opacity of 75% of the original image:
 ```{r fig4, fig.height = 15, fig.width = 10, align= "center"}
@@ -128,6 +128,5 @@ render_camera(theta=-45+angles[i])
 rgl::rgl.close()
 system("ffmpeg -framerate 60 -i guwahati_osm%d.png -vcodec libx264 -an Guwahati_Street_Map.mp4 ")
 ```
-![Guwahati Street Map](C:/Users/asus/Documents/Guwahati_Street_Map.mp4)
-```
+
 
