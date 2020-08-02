@@ -1,6 +1,6 @@
 # Guwahati-3D-map-Street-Map-Overlay
 Tutorial on generating 3D map with street map image overlay using R
-![Demo1](https://github.com/HwoabamGuwahati-3D-map-Street-Map-Overlay/blob/master/Media/Animation/GIF1..gif)
+![Demo1](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Animation/GIF1..gif)
 
 The packages required:
 ```{r}
@@ -32,7 +32,7 @@ leaflet() %>%
     lng2 = bbox$p2$long, lat2 = bbox$p2$lat,
   )
 ```
-![Leaflet](https://github.com/HwoabamGuwahati-3D-map-Street-Map-Overlay/blob/master/Media/Snapshots/Capture23.PNG)
+![Leaflet](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Snapshots/Capture23.PNG)
 
 SRTM elevation file is used for this plot and downloaded from Derek Watkin's -"30 meter SRTM tile downloader". The downloaded SRTM hgt data is converted to a matrix. Then a heat map for elevation is produced.
 ```{r fig2, fig.height = 15, fig.width = 10, align= "center"}
@@ -45,7 +45,7 @@ projectRaster(Elevation_File,
 height_shade(raster_to_matrix(Elevation_File)) %>%
   plot_map()
 ```
-![Elevation heatmap](https://github.com/HwoabamGuwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/Elevation_heatmap.png)
+![Elevation heatmap](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/Elevation_heatmap.png)
 
 The crop function is used to crop the require area from the elevation matrix by using the extents defined from the bounding box created previously. 
 ```{r}
@@ -78,14 +78,14 @@ el_matrix %>%
   add_shadow(ambmat, max_darken = 0.5) %>%
   plot_map()
 ```
-![Default texture plot](https://github.com/HwoabamGuwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/imhof4.png)
+![Default texture plot](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/imhof4.png)
 
 The overlay image is downloaded from openstreetmaps.org in PNG format and is called and read using readPNG():  
 ```{r}
 overlay_file <- "C:/Users/asus/Downloads/map (1).png"
 overlay_img <- png::readPNG(overlay_file)
 ```
-![Final 2D plot](https://github.com/HwoabamGuwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/OSmap.png)
+![Final 2D plot](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/OSmap.png)
 
 A overlay image is then transposed upon the previously configured elevation plot with an opacity of 75% of the original image:
 ```{r fig4, fig.height = 15, fig.width = 10, align= "center"}
@@ -96,7 +96,7 @@ el_matrix %>%
   add_overlay(overlay_img, alphalayer = 0.75) %>%
   plot_map()
 ```
-![Final 2D plot](https://github.com/HwoabamGuwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/OSmap.png)
+![Final 2D plot](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/OSmap.png)
 
 Using the Plot generated previoulsy and the elevation matrix, providing a zscale=7.5 and viewpoint parameters as desired: 
 ```{r fig5, fig.height = 15, fig.width = 10, align= "center"}
@@ -114,7 +114,7 @@ render_scalebar(limits=c(20,10,0),label_unit = "km",position = "S", y=50,scale_l
 render_compass(position = "W" )
 render_snapshot(title_text = "Guwahati Open street Map | DEM: 30m SRTM",title_bar_color = "black", title_color = "white", title_bar_alpha = 1)
 ```
-![3D plot](https://github.com/HwoabamGuwahati-3D-map-Street-Map-Overlay/blob/master/Media/Snapshots/snap.png)
+![3D plot](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Snapshots/snap.png)
 
 Conversion of the map to a video footage of its planar rotation using snapshots taken at 1440 intervals during the rotation at 60 fps with the help of ffmpeg
 ```{r}
