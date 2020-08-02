@@ -1,6 +1,6 @@
 # Guwahati-3D-map-Street-Map-Overlay
 Tutorial on generating 3D map with street map image overlay using R
-![Demo1](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Animation/OSM.gif)
+![Demo1](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Animation/Street_Map.gif)
 
 The packages required:
 ```{r}
