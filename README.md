@@ -36,7 +36,7 @@ leaflet() %>%
 
 SRTM elevation file is used for this plot and downloaded from Derek Watkin's -"30 meter SRTM tile downloader". The downloaded SRTM hgt data is converted to a matrix. Then a heat map for elevation is produced.
 ```{r fig2, fig.height = 15, fig.width = 10, align= "center"}
-Elevation_File <- raster("D:/Assam maps/New Folder/N26E091.hgt")
+Elevation_File <- raster(File location"/N26E091.hgt")
 Elevation_File
 #reproject the DEM
 projectRaster(Elevation_File, 
@@ -82,7 +82,7 @@ el_matrix %>%
 
 The overlay image is downloaded from openstreetmaps.org in PNG format and is called and read using readPNG():  
 ```{r}
-overlay_file <- "C:/Users/asus/Downloads/map (1).png"
+overlay_file <- Download Location "Downloads/map (1).png"
 overlay_img <- png::readPNG(overlay_file)
 ```
 ![Final 2D plot](https://github.com/Hwoabam/Guwahati-3D-map-Street-Map-Overlay/blob/master/Media/Plots/map(1).png)
